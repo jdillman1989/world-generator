@@ -295,7 +295,7 @@ function flow(source){
   var sourceEl = gameMap[source].el;
   var next = lowestAdjacent(source);
 
-  if (next.thisEl > sourceEl) {
+  if (next.thisEl > sourceEl && sourceEl >= waterTable) {
     gameMap[next.thisTile].el = sourceEl - 1;
   }
   wetTile(next.thisTile);

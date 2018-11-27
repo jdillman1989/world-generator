@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript" src="map.js"></script>
+
+<style>
+
+  body{
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 18px;
+  }
+
+  main, div{
+    width: 100%;
+    max-width: 700px;
+    margin: 10px auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  button{
+    width: 120px;
+    margin: 0 20px;
+    padding: 10px;
+    border: none;
+    background: #C9C9C9;
+    color: #000;
+  }
+
+  input{
+    width: 40px;
+    margin: 0 20px;
+    padding: 10px;
+    border: none;
+    background: #FFF;
+    color: #000;
+  }
+
+</style>
+
+</head>
+<body>
+
+<main>
+  <div>
+    <canvas id="game" width="600" height="600"></canvas>
+  </div>
+
+  <div>
+    <button id="worldGen" onclick="worldGen()">World Gen</button>
+    <!--
+    <button id="earthquake" onclick="earthquake()">Earthquake</button>
+    <button id="smooth" onclick="smooth()">Smooth</button>
+    -->
+    <button id="refine" onclick="refine()">Refine</button>
+    <button id="water" onclick="water()">Water</button>
+    <button id="life" onclick="life()">Life</button>
+  </div>
+  
+  <div>
+    <label>water table</label>
+    <input type="text" id="waterTable" placeholder="water table" value="4">
+
+    <label>tree line</label>
+    <input type="text" id="treeLine" placeholder="tree line" value="9">
+
+    <label>tolerance</label>
+    <input type="text" id="tolerance" placeholder="tolerance" value="2">
+
+    <label>viability</label>
+    <input type="text" id="viability" placeholder="viability" value="18">
+  </div>
+
+  <div>
+    <button id="apply" onclick="apply()">Apply</button>
+  </div>
+</main>
+
+</body>
+</html>

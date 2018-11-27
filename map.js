@@ -312,22 +312,22 @@ function pool(tile){
   var adj = adjacentTiles(tile);
   var allAdj = Object.values(adj.all);
 
-  var elevation = 0;
-  var heighest;
+  var elevation = 9999;
+  var lowest;
   var found = false;
 
   for (var i = 0; i < allAdj.length; i++) {
     if (gameMap[allAdj[i]].state != "water" && gameMap[allAdj[i]].el <= waterTable){
       wetTile(allAdj[i]);
-      if (gameMap[allAdj[i]].el > elevation) {
+      if (gameMap[allAdj[i]].el < elevation) {
         elevation = gameMap[allAdj[i]].el;
-        heighest = allAdj[i];
+        lowest = allAdj[i];
         found = true;
       }
     }
   }
   if (found) {
-    pool(heighest);
+    pool(lowest);
   }
   else{
     lakes.push(tile);
